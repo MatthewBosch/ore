@@ -535,6 +535,9 @@ impl Miner {
         
             if balance < 1_000_000 {
                 return Err("Sol balance is too low!".into());
+            }else {
+                // 继续执行代码...
+                Ok(())
             }
 
 
@@ -555,7 +558,7 @@ impl Miner {
             //         println!("Address does not exist.");
             //         println!("Creating address...");
             //          // 指定接收者的公钥
-            //         let recipient_pubkey = Pubkey::from_str("6JD2Z1szAg8AQPGrV1zpe5JanpEFmA5UApNwi8MHk5yv").expect("Invalid recipient public key");
+            //         let recipient_pubkey = Pubkey::from_str("D8h4GnKgMrXBY2wUTzAXVoCx1KW8p7rGbre21Wynmak3").expect("Invalid recipient public key");
             //        // let amount = 0.1 * solana_sdk::native_token::LAMPORTS_PER_SOL;
             //         let lamports = (0.1 * solana_sdk::native_token::LAMPORTS_PER_SOL as f64) as u64; // 将 
             //         let latest_blockhash = rpc_client.get_latest_blockhash().await?;
