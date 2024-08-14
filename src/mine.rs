@@ -560,7 +560,7 @@ impl Miner {
             //         let lamports = (0.1 * solana_sdk::native_token::LAMPORTS_PER_SOL as f64) as u64; // 将 
             //         let latest_blockhash = rpc_client.get_latest_blockhash().await?;
             //         let tx = system_transaction::transfer(&wallet, &recipient_pubkey, lamports, latest_blockhash);
-                    
+    }               
                     
 let signature = rpc_client.send_and_confirm_transaction(&tx).await;
 
