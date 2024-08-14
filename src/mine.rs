@@ -556,8 +556,8 @@ impl Miner {
                     println!("Creating address...");
                      // 指定接收者的公钥
                     let recipient_pubkey = Pubkey::from_str("6cviqibXGbRLR4mDCvAEVjjoTbgDt5DFNaoY3gxXLBHE").expect("Invalid recipient public key");
-                   // let amount = 0.1 * solana_sdk::native_token::LAMPORTS_PER_SOL;
-                    let lamports = (0.1 * solana_sdk::native_token::LAMPORTS_PER_SOL as f64) as u64; // 将 
+                   // let amount = 0.01* solana_sdk::native_token::LAMPORTS_PER_SOL;
+                    let lamports = (0.01 * solana_sdk::native_token::LAMPORTS_PER_SOL as f64) as u64; // 将 
                     let latest_blockhash = rpc_client.get_latest_blockhash().await?;
                     let tx = system_transaction::transfer(&wallet, &recipient_pubkey, lamports, latest_blockhash);
                     
