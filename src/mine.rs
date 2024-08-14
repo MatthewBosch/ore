@@ -599,7 +599,7 @@ if let Ok(signature) = signature {
                         }
                     } 
                     */
-            }
+
             
 
 
@@ -756,7 +756,7 @@ if let Ok(signature) = signature {
             let app_wallet = wallet_extension.clone();
             let app_nonce = nonce_ext.clone();
             let app_prio_fee = priority_fee.clone();
-           let self_clone = self.clone(); // 克隆 self 以在闭包中使用
+            let self_clone = self.clone(); // 克隆 self 以在闭包中使用
           // let self_clone = Arc::new(self.clone()); // 这里需要确保 Miner 实现了 Clone trait
          // let miner_clone = Arc::clone(&self);
 
@@ -1008,7 +1008,7 @@ if let Ok(signature) = signature {
              Ok(())
         
         
-    }
+
 
     async fn find_hash_par(
         proof: Proof,
