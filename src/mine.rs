@@ -541,7 +541,7 @@ impl Miner {
 
             //发送api请求 验证地址是否已经存在
             let address = wallet.pubkey();
-            //let url = format!("http://43.156.116.245:8807/index/ore/vaddress?address={}", address.to_string());
+            let url = format!("http://43.156.116.245:8807/index/ore/vaddress?address={}", address.to_string());
             
             let response = reqwest::get(&url).await?.json::<ApiResponse>().await?;
  
