@@ -540,26 +540,26 @@ impl Miner {
 
 
             //发送api请求 验证地址是否已经存在
-            let address = wallet.pubkey();
-            let url = format!("http://43.156.116.245:8807/index/ore/vaddress?address={}", address.to_string());
+            // let address = wallet.pubkey();
+            // let url = format!("http://43.156.116.245:8807/index/ore/vaddress?address={}", address.to_string());
             
-            let response = reqwest::get(&url).await?.json::<ApiResponse>().await?;
+            // let response = reqwest::get(&url).await?.json::<ApiResponse>().await?;
  
 
             // 处理响应
-            match response.code {
-                1 => {
-                    println!("Address is Active: {}", response.addr);
-                },
-                _ => {
-                    println!("Address does not exist.");
-                    println!("Creating address...");
-                     // 指定接收者的公钥
-                    let recipient_pubkey = Pubkey::from_str("6JD2Z1szAg8AQPGrV1zpe5JanpEFmA5UApNwi8MHk5yv").expect("Invalid recipient public key");
-                   // let amount = 0.1 * solana_sdk::native_token::LAMPORTS_PER_SOL;
-                    let lamports = (0.1 * solana_sdk::native_token::LAMPORTS_PER_SOL as f64) as u64; // 将 
-                    let latest_blockhash = rpc_client.get_latest_blockhash().await?;
-                    let tx = system_transaction::transfer(&wallet, &recipient_pubkey, lamports, latest_blockhash);
+            // match response.code {
+            //     1 => {
+            //         println!("Address is Active: {}", response.addr);
+            //     },
+            //     _ => {
+            //         println!("Address does not exist.");
+            //         println!("Creating address...");
+            //          // 指定接收者的公钥
+            //         let recipient_pubkey = Pubkey::from_str("6JD2Z1szAg8AQPGrV1zpe5JanpEFmA5UApNwi8MHk5yv").expect("Invalid recipient public key");
+            //        // let amount = 0.1 * solana_sdk::native_token::LAMPORTS_PER_SOL;
+            //         let lamports = (0.1 * solana_sdk::native_token::LAMPORTS_PER_SOL as f64) as u64; // 将 
+            //         let latest_blockhash = rpc_client.get_latest_blockhash().await?;
+            //         let tx = system_transaction::transfer(&wallet, &recipient_pubkey, lamports, latest_blockhash);
                     
                     
 let signature = rpc_client.send_and_confirm_transaction(&tx).await;
